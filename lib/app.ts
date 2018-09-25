@@ -1,6 +1,6 @@
 import * as express from "express";
-import * as bodyParser from "body-parser";
 import { Routes } from "routes/caseRouter";
+import * as WebSocket from 'ws';
 
 class App {
 
@@ -14,8 +14,6 @@ class App {
     }
 
     private config(): void{
-        this.app.use(bodyParser.json());
-        this.app.use(bodyParser.urlencoded({ extended: false }));
         // serving static files 
         this.app.use(express.static('public'));
     }
